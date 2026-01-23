@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact Us - Loonges{% endblock %}
+
+{% block content %}
+<section class="section bg-light">
+    <div class="container">
+        <div class="section-header">
+            <h1>Contact Us</h1>
+            <p>Have questions about our products or need a custom solution? Get in touch with our team.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="grid grid-2">
+            <!-- Contact Info -->
+            <div>
+                <h2 style="margin-bottom: 1.5rem;">Get in Touch</h2>
+
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="font-size: 1.25rem;">Headquarters</h3>
+                    <p>123 Innovation Park, Industrial District<br>
+                        Shenzhen, China</p>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="font-size: 1.25rem;">Contact Info</h3>
+                    <p>
+                        <strong>Email:</strong> info@loonges.com<br>
+                        <strong>Phone:</strong> +86 123 4567 8900
+                    </p>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="font-size: 1.25rem;">WeChat</h3>
+                    <div
+                        style="width: 150px; height: 150px; background-color: #eee; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
+                        <span style="color: #999; font-size: 0.9rem;">QR Code Placeholder</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 1.25rem;">Online Stores</h3>
+                    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                        <a href="#" class="btn btn-outline">Amazon Store</a>
+                        <a href="#" class="btn btn-outline">Taobao Store</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div
+                style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid #eee;">
+                <h3 style="margin-bottom: 1.5rem;">Send us a Message</h3>
+                <form action="{{ url_for('contact') }}" method="post">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" name="message" class="form-control" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Map Section (Placeholder) -->
+<section style="height: 400px; background-color: #e9ecef; display: flex; align-items: center; justify-content: center;">
+    <p style="color: #666; font-size: 1.2rem;">Detailed Map Location Placeholder</p>
+</section>
+{% endblock %}

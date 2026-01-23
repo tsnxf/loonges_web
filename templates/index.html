@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Advanced Passive Cooling Solutions</h1>
+            <p>Innovative ice packs and cold storage technology for modern preservation needs. Professional, reliable,
+                and efficient.</p>
+            <div style="margin-top: 2rem;">
+                <a href="{{ url_for('products') }}" class="btn">Explore Products</a>
+                <a href="{{ url_for('contact') }}" class="btn btn-outline" style="margin-left: 1rem;">Contact Us</a>
+            </div>
+        </div>
+    </div>
+    <!-- Placeholder for Hero Image - In production this would be a real image -->
+    <img src="{{ url_for('static', filename='images/hero-bg.png') }}" alt="Cooling Technology" class="hero-image">
+</section>
+
+<!-- Features Section -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Why Loonges?</h2>
+            <p>We are dedicated to providing the highest quality passive cooling solutions for industrial, commercial,
+                and personal use.</p>
+        </div>
+        <div class="grid grid-3">
+            <div class="card">
+                <div class="card-content">
+                    <h3 class="card-title">Premium Quality</h3>
+                    <p>Manufactured using top-tier materials to ensure durability and long-lasting cooling performance.
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3 class="card-title">Versatile Applications</h3>
+                    <p>From food preservation to cold chain logistics and medical cooling, we have a solution for every
+                        need.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3 class="card-title">Eco-Friendly</h3>
+                    <p>Our products are designed with sustainability in mind, using non-toxic and reusable materials.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Products Section -->
+<section class="section bg-light">
+    <div class="container">
+        <div class="section-header">
+            <h2>Core Products</h2>
+            <p>Discover our range of high-performance cooling products.</p>
+        </div>
+        <div class="grid grid-3">
+            <!-- Product 1 -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="{{ url_for('static', filename='images/ice-pack.png') }}" alt="Standard Ice Pack">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Standard Ice Packs</h3>
+                    <p>Reliable cooling for daily use. Perfect for lunch boxes and small coolers.</p>
+                    <a href="{{ url_for('products') }}"
+                        style="color: var(--color-accent); font-weight: 500; display: inline-block; margin-top: 1rem;">Learn
+                        more &rarr;</a>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://placehold.co/600x400/e0e0e0/999999?text=Cold+Brick" alt="Heavy Duty Cold Brick">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Heavy Duty Cold Bricks</h3>
+                    <p>Long-duration cooling for shipping and commercial storage.</p>
+                    <a href="{{ url_for('products') }}"
+                        style="color: var(--color-accent); font-weight: 500; display: inline-block; margin-top: 1rem;">Learn
+                        more &rarr;</a>
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://placehold.co/600x400/e0e0e0/999999?text=Gel+Pack" alt="Flexible Gel Pack">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Flexible Gel Packs</h3>
+                    <p>Contours to shapes for effective injury relief or specialized shipping.</p>
+                    <a href="{{ url_for('products') }}"
+                        style="color: var(--color-accent); font-weight: 500; display: inline-block; margin-top: 1rem;">Learn
+                        more &rarr;</a>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="{{ url_for('products') }}" class="btn">View All Products</a>
+        </div>
+    </div>
+</section>
+
+<!-- Factory/Capacity Teaser -->
+<section class="section">
+    <div class="container">
+        <div class="grid grid-2" style="align-items: center;">
+            <div>
+                <h2>State-of-the-Art Manufacturing</h2>
+                <p style="margin-bottom: 2rem;">Our production facilities are equipped with the latest technology to
+                    ensure high output and consistent quality. We handle orders of any scale with efficiency.</p>
+                <ul style="margin-bottom: 2rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <li>✓ Advanced Automation</li>
+                    <li>✓ Strict Quality Control</li>
+                    <li>✓ High Daily Capacity</li>
+                </ul>
+                <a href="{{ url_for('factory') }}" class="btn btn-outline">Tour Our Factory</a>
+            </div>
+            <div>
+                <img src="{{ url_for('static', filename='images/factory-interior.png') }}" alt="Factory Floor"
+                    style="border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

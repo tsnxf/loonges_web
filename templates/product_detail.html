@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block title %}Product Details - Loonges{% endblock %}
+
+{% block content %}
+<section class="section" style="padding-top: 4rem;">
+    <div class="container">
+        <!-- Breadcrumb -->
+        <div style="margin-bottom: 2rem; font-size: 0.9rem; color: #666;">
+            <a href="{{ url_for('index') }}">Home</a> / <a href="{{ url_for('products') }}">Products</a> /
+            <span>Standard Ice Pack 500g</span>
+        </div>
+
+        <div class="grid grid-2" style="gap: 4rem;">
+            <!-- Product Images -->
+            <div>
+                <div
+                    style="background: #f8f9fa; border-radius: 8px; overflow: hidden; margin-bottom: 1rem; border: 1px solid #eee;">
+                    <img src="{{ url_for('static', filename='images/ice-pack.png') }}" alt="Main Product Image"
+                        style="width: 100%;">
+                </div>
+                <div class="grid grid-4" style="gap: 1rem;">
+                    <img src="https://placehold.co/200x200/e0e0e0/999999?text=View+1"
+                        style="border-radius: 4px; cursor: pointer; opacity: 0.7;">
+                    <img src="https://placehold.co/200x200/e0e0e0/999999?text=View+2"
+                        style="border-radius: 4px; cursor: pointer; opacity: 0.7;">
+                    <img src="https://placehold.co/200x200/e0e0e0/999999?text=View+3"
+                        style="border-radius: 4px; cursor: pointer; opacity: 0.7;">
+                    <img src="https://placehold.co/200x200/e0e0e0/999999?text=Usage"
+                        style="border-radius: 4px; cursor: pointer; opacity: 0.7;">
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div>
+                <span
+                    style="background: var(--color-accent); color: white; padding: 0.25rem 0.75rem; border-radius: 100px; font-size: 0.8rem; font-weight: 600;">Best
+                    Seller</span>
+                <h1 style="margin-top: 1rem; font-size: 2.5rem;">Standard Ice Pack 500g</h1>
+                <p style="font-size: 1.25rem; color: var(--color-text-secondary); margin-bottom: 2rem;">Durable,
+                    reusable, and efficient cooling for everyday needs.</p>
+
+                <div
+                    style="border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 1.5rem 0; margin-bottom: 2rem;">
+                    <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">Specifications</h3>
+                    <ul
+                        style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.95rem; color: var(--color-text-secondary);">
+                        <li><strong>Weight:</strong> 500g (+/- 5%)</li>
+                        <li><strong>Dimensions:</strong> 200 x 120 x 30 mm</li>
+                        <li><strong>Material:</strong> HDPE + Super Absorbent Polymer</li>
+                        <li><strong>Phase Change:</strong> 0°C</li>
+                        <li><strong>Duration:</strong> Up to 12 hours</li>
+                        <li><strong>Reusability:</strong> Yes, >1000 cycles</li>
+                    </ul>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Application Scenarios</h3>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        <span
+                            style="background: #f0f0f0; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.9rem;">Fresh
+                            Food Delivery</span>
+                        <span
+                            style="background: #f0f0f0; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.9rem;">Lunch
+                            Boxes</span>
+                        <span
+                            style="background: #f0f0f0; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.9rem;">Picnics</span>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 1rem;">
+                    <a href="{{ url_for('contact') }}" class="btn" style="flex: 1; text-align: center;">Request
+                        Quote</a>
+                    <a href="#" class="btn btn-outline" style="flex: 1; text-align: center;">Buy on Amazon</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Description Tabs/Content -->
+<section class="section bg-light">
+    <div class="container" style="max-width: 800px;">
+        <h2 style="margin-bottom: 1.5rem;">Product Description</h2>
+        <div
+            style="background: white; padding: 2rem; border-radius: 8px; font-size: 1.05rem; line-height: 1.8; color: var(--color-text-secondary);">
+            <p>The Standard Ice Pack 500g is our most popular solution for general temperature control. Made with
+                high-density polyethylene (HDPE), the hard shell is puncture-resistant and prevents leaks, ensuring the
+                safety of your goods.</p>
+            <p style="margin-top: 1rem;">Inside, our proprietary gel formula maintains a stable cool temperature for
+                extended periods, outperforming traditional water-based ice packs. It is non-toxic, food-safe, and easy
+                to clean.</p>
+            <p style="margin-top: 1rem;">Ideal for:</p>
+            <ul style="list-style: disc; margin-left: 1.5rem; margin-top: 0.5rem;">
+                <li>Maintaining freshness for produce and dairy during transit.</li>
+                <li>Keeping beverages cold for outdoor events.</li>
+                <li>Short-to-medium distance cold chain logistics.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+{% endblock %}

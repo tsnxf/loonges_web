@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+
+{% block title %}Products - Loonges{% endblock %}
+
+{% block content %}
+<section class="section bg-light">
+    <div class="container">
+        <div class="section-header">
+            <h1>Product Center</h1>
+            <p>Explore our comprehensive range of passive cooling solutions designed for efficiency and reliability.</p>
+        </div>
+
+        <!-- Category Filter (Static for now) -->
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap;">
+            <button class="btn">All Products</button>
+            <button class="btn btn-outline">Ice Packs</button>
+            <button class="btn btn-outline">Cold Bricks</button>
+            <button class="btn btn-outline">Gel Packs</button>
+            <button class="btn btn-outline">Insulated Boxes</button>
+        </div>
+
+        <div class="grid grid-3">
+            <!-- Product 1 -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="{{ url_for('static', filename='images/ice-pack.png') }}" alt="Standard Ice Pack">
+                </div>
+                <div class="card-content">
+                    <span style="font-size: 0.8rem; color: #999; text-transform: uppercase; letter-spacing: 0.05em;">Ice
+                        Packs</span>
+                    <h3 class="card-title">Standard Ice Pack 500g</h3>
+                    <p>Ideal for lunch boxes and small cooler bags. Durable and reusable.</p>
+                    <a href="{{ url_for('product_detail', product_id=1) }}" class="btn btn-outline"
+                        style="margin-top: 1rem; width: 100%; text-align: center;">View Details</a>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://placehold.co/600x400/e0e0e0/999999?text=HD+Cold+Brick"
+                        alt="Heavy Duty Cold Brick">
+                </div>
+                <div class="card-content">
+                    <span
+                        style="font-size: 0.8rem; color: #999; text-transform: uppercase; letter-spacing: 0.05em;">Cold
+                        Bricks</span>
+                    <h3 class="card-title">HD Cold Brick 1kg</h3>
+                    <p>Designed for long-haul shipping and medical transport. Maintains sub-zero temps.</p>
+                    <a href="{{ url_for('product_detail', product_id=2) }}" class="btn btn-outline"
+                        style="margin-top: 1rem; width: 100%; text-align: center;">View Details</a>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://placehold.co/600x400/e0e0e0/999999?text=Soft+Gel+Pack" alt="Soft Gel Pack">
+                </div>
+                <div class="card-content">
+                    <span style="font-size: 0.8rem; color: #999; text-transform: uppercase; letter-spacing: 0.05em;">Gel
+                        Packs</span>
+                    <h3 class="card-title">flexible Soft Gel Pack</h3>
+                    <p>Remains flexible when frozen. Perfect for injury relief or irregular shapes.</p>
+                    <a href="{{ url_for('product_detail', product_id=3) }}" class="btn btn-outline"
+                        style="margin-top: 1rem; width: 100%; text-align: center;">View Details</a>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://placehold.co/600x400/e0e0e0/999999?text=Vaccine+Carrier" alt="Vaccine CarrierBox">
+                </div>
+                <div class="card-content">
+                    <span
+                        style="font-size: 0.8rem; color: #999; text-transform: uppercase; letter-spacing: 0.05em;">Insulated
+                        Boxes</span>
+                    <h3 class="card-title">Bio-Safe Vaccine Carrier</h3>
+                    <p>High-performance VIP insulation for critical medical transport.</p>
+                    <a href="{{ url_for('product_detail', product_id=4) }}" class="btn btn-outline"
+                        style="margin-top: 1rem; width: 100%; text-align: center;">View Details</a>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://placehold.co/600x400/e0e0e0/999999?text=PCM+Pack" alt="PCM Pack">
+                </div>
+                <div class="card-content">
+                    <span
+                        style="font-size: 0.8rem; color: #999; text-transform: uppercase; letter-spacing: 0.05em;">Specialty</span>
+                    <h3 class="card-title">Phase Change Material Pack</h3>
+                    <p>Precise temperature control at 5°C. For sensitive electronics or bio-samples.</p>
+                    <a href="{{ url_for('product_detail', product_id=5) }}" class="btn btn-outline"
+                        style="margin-top: 1rem; width: 100%; text-align: center;">View Details</a>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://placehold.co/600x400/e0e0e0/999999?text=Custom+Solution" alt="Custom Solution">
+                </div>
+                <div class="card-content">
+                    <span
+                        style="font-size: 0.8rem; color: #999; text-transform: uppercase; letter-spacing: 0.05em;">Services</span>
+                    <h3 class="card-title">Custom Cooling Solution</h3>
+                    <p>Tailored size, material, and temperature range for your specific project.</p>
+                    <a href="{{ url_for('contact') }}" class="btn btn-outline"
+                        style="margin-top: 1rem; width: 100%; text-align: center;">Inquire Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
