@@ -20,12 +20,11 @@
             <!-- Lightweight Video Embed Placeholder -->
             <div
                 style="position: relative; padding-bottom: 56.25%; height: 0; background: #000; border-radius: 8px; overflow: hidden;">
-                <div
-                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; flex-direction: column;">
-                    <span style="font-size: 4rem;">▶</span>
-                    <p>Corporate Video / Factory Tour (Embed)</p>
-                </div>
-                <!-- <iframe src="..." style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen></iframe> -->
+                <video controls
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                    <source src="{{ url_for('static', filename='videos/factory.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
 
@@ -55,7 +54,7 @@
                 <p>Precise molding for consistent bottle shape and thickness.</p>
             </div>
             <div>
-                <img src="https://placehold.co/600x400/e0e0e0/999999?text=Filling+Lines" alt="Filling Lines"
+                <img src="{{ url_for('static', filename='images/high-speed-filling.jpg') }}" alt="Filling Lines"
                     style="border-radius: 8px; margin-bottom: 1rem;">
                 <h3>High-Speed Filling</h3>
                 <p>Automated filling lines ensure accurate volume and sealed hygiene.</p>
@@ -67,7 +66,7 @@
                 <p>Stress testing, leakage testing, and thermal performance validation.</p>
             </div>
             <div>
-                <img src="https://placehold.co/600x400/e0e0e0/999999?text=Warehouse" alt="Warehouse"
+                <img src="{{ url_for('static', filename='images/smart-warehousing.jpg') }}" alt="Warehouse"
                     style="border-radius: 8px; margin-bottom: 1rem;">
                 <h3>Smart Warehousing</h3>
                 <p>Organized storage for raw materials and finished goods, ready for rapid dispatch.</p>
