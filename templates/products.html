@@ -10,6 +10,17 @@
             <p>Explore our comprehensive range of passive cooling solutions designed for efficiency and reliability.</p>
         </div>
 
+        <!-- Product Overview Video -->
+        <div style="margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; background: #000; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <video controls style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                    <source src="{{ url_for('static', filename='videos/products.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <p style="text-align: center; margin-top: 1rem; color: #666; font-size: 0.9rem;">Overview of our product range and applications</p>
+        </div>
+
         <!-- Category Filter (Static for now) -->
         <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap;">
             <button class="btn">All Products</button>
