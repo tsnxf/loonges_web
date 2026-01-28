@@ -2,7 +2,33 @@
 
 {% block title %}Products - Loonges{% endblock %}
 
+{% block extra_css %}
+<style>
+    .site-footer {
+        background-image: url("{{ url_for('static', filename='images/products-hero.jpg') }}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: white;
+        /* Ensure text is readable against the background, assuming it's dark or rich */
+    }
+
+    /* Adjust links and headings in footer for visibility if needed, but let's stick to the container primarily */
+    .site-footer h3,
+    .site-footer h4,
+    .site-footer p,
+    .site-footer li,
+    .site-footer a {
+        color: white;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        /* Improve readability */
+    }
+</style>
+{% endblock %}
+
 {% block content %}
+
+
 <section class="section bg-light">
     <div class="container">
         <div class="section-header">
@@ -52,13 +78,13 @@
             <!-- Product 2 -->
             <div class="card">
                 <div class="card-image">
-                    <img src="{{ url_for('static', filename='images/cold-brick.png') }}" alt="Heavy Duty Cold Brick">
+                    <img src="{{ url_for('static', filename='images/pets-fit-type.jpg') }}" alt="Heavy Duty Cold Brick">
                 </div>
                 <div class="card-content">
                     <span
                         style="font-size: 0.8rem; color: #999; text-transform: uppercase; letter-spacing: 0.05em;">Cold
                         Bricks</span>
-                    <h3 class="card-title">HD Cold Brick 1kg</h3>
+                    <h3 class="card-title">Pets Fit Type</h3>
                     <p>Designed for long-haul shipping and medical transport. Maintains sub-zero temps.</p>
                     <a href="{{ url_for('product_detail', product_id=2) }}" class="btn btn-outline"
                         style="margin-top: 1rem; width: 100%; text-align: center;">View Details</a>
@@ -128,4 +154,6 @@
         </div>
     </div>
 </section>
+
+
 {% endblock %}

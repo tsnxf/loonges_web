@@ -15,7 +15,7 @@
         </div>
     </div>
     <!-- Placeholder for Hero Image - In production this would be a real image -->
-    <img src="{{ url_for('static', filename='images/hero-bg.png') }}" alt="Cooling Technology" class="hero-image">
+    <img src="{{ url_for('static', filename='images/hero-bg.jpg') }}" alt="Cooling Technology" class="hero-image">
 </section>
 
 <!-- Features Section -->
@@ -56,17 +56,17 @@
 <section class="section bg-light">
     <div class="container">
         <div class="section-header">
-            <h2>Core Products</h2>
+            <h2>Core Products &amp; Applications</h2>
             <p>Discover our range of high-performance cooling products.</p>
         </div>
         <div class="grid grid-3">
             <!-- Product 1 -->
             <div class="card">
                 <div class="card-image">
-                    <img src="{{ url_for('static', filename='images/flexible-ice-film.jpg') }}" alt="Standard Ice Pack">
+                    <img src="{{ url_for('static', filename='images/food-preservation.jpg') }}" alt="Food Preservation">
                 </div>
                 <div class="card-content">
-                    <h3 class="card-title">Flexible Ice Sheet</h3>
+                    <h3 class="card-title">Food Preservation</h3>
                     <p>Reliable cooling for daily use. Perfect for lunch boxes and small coolers.</p>
                     <a href="{{ url_for('products') }}"
                         style="color: var(--color-accent); font-weight: 500; display: inline-block; margin-top: 1rem;">Learn
@@ -76,10 +76,10 @@
             <!-- Product 2 -->
             <div class="card">
                 <div class="card-image">
-                    <img src="https://placehold.co/600x400/e0e0e0/999999?text=Cold+Brick" alt="Heavy Duty Cold Brick">
+                    <img src="{{ url_for('static', filename='images/pet-comfort.jpg') }}" alt="Heavy Duty Cold Brick">
                 </div>
                 <div class="card-content">
-                    <h3 class="card-title">Heavy Duty Cold Bricks</h3>
+                    <h3 class="card-title">Pet Comfort</h3>
                     <p>Long-duration cooling for shipping and commercial storage.</p>
                     <a href="{{ url_for('products') }}"
                         style="color: var(--color-accent); font-weight: 500; display: inline-block; margin-top: 1rem;">Learn
@@ -89,10 +89,11 @@
             <!-- Product 3 -->
             <div class="card">
                 <div class="card-image">
-                    <img src="https://placehold.co/600x400/e0e0e0/999999?text=Gel+Pack" alt="Flexible Gel Pack">
+                    <img src="{{ url_for('static', filename='images/cooling-outdoor-comfort.jpg') }}"
+                        alt="Cooling and Outdoor Comfort">
                 </div>
                 <div class="card-content">
-                    <h3 class="card-title">Flexible Gel Packs</h3>
+                    <h3 class="card-title">Cooling and Outdoor Comfort</h3>
                     <p>Contours to shapes for effective injury relief or specialized shipping.</p>
                     <a href="{{ url_for('products') }}"
                         style="color: var(--color-accent); font-weight: 500; display: inline-block; margin-top: 1rem;">Learn

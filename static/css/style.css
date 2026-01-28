@@ -24,8 +24,8 @@
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
     --spacing-md: 2rem;
-    --spacing-lg: 4rem;
-    --spacing-xl: 8rem;
+    --spacing-lg: 3rem;
+    --spacing-xl: 5rem;
 
     /* Layout */
     --container-width: 1200px;
@@ -312,7 +312,8 @@ p {
 }
 
 .card-image {
-    height: 250px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
     overflow: hidden;
     background-color: var(--color-bg-light);
 }
@@ -320,7 +321,7 @@ p {
 .card-image img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     transition: transform 0.5s ease;
 }
 
