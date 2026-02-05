@@ -241,8 +241,12 @@ p {
     }
 
     .btn {
-        width: 200px;
-        max-width: 100%;
+        width: 200px !important;
+        min-width: 200px !important;
+        max-width: 200px !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        box-sizing: border-box;
     }
 
     .grid-2,
