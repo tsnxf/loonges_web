@@ -240,6 +240,10 @@ p {
         display: flex;
     }
 
+    .btn {
+        width: 200px;
+        max-width: 100%;
+    }
 
     .grid-2,
     .grid-3,
