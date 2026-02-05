@@ -78,6 +78,8 @@ img {
 
 .grid-2 {
     grid-template-columns: repeat(2, 1fr);
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .grid-3 {
@@ -197,6 +199,8 @@ p {
 .btn {
     display: inline-block;
     padding: 0.8em 1.6em;
+    min-width: 200px;
+    text-align: center;
     background-color: var(--color-text-primary);
     color: white;
     border-radius: 4px;
