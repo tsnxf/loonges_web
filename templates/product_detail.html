@@ -2,13 +2,66 @@
 
 {% block title %}Product Details - Loonges{% endblock %}
 
+{% block extra_css %}
+<style>
+    /* Lightbox Modal */
+    .lightbox-modal {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .lightbox-modal.active {
+        display: flex;
+    }
+
+    .lightbox-content {
+        max-width: 90%;
+        max-height: 90%;
+        object-fit: contain;
+        border-radius: 8px;
+    }
+
+    .lightbox-close {
+        position: absolute;
+        top: 20px;
+        right: 40px;
+        color: white;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+
+    .lightbox-close:hover {
+        color: #ccc;
+    }
+
+    .clickable-image {
+        cursor: pointer;
+        transition: opacity 0.3s;
+    }
+
+    .clickable-image:hover {
+        opacity: 1 !important;
+    }
+</style>
+{% endblock %}
+
 {% block content %}
 <section class="section" style="padding-top: 4rem;">
     <div class="container">
         <!-- Breadcrumb -->
         <div style="margin-bottom: 2rem; font-size: 0.9rem; color: #666;">
             <a href="{{ url_for('index') }}">Home</a> / <a href="{{ url_for('products') }}">Products</a> /
-            <span>Flexible Ice Sheet</span>
+            <span>{{ product.name }}</span>
         </div>
 
         <div class="grid grid-2" style="gap: 4rem;">
@@ -16,18 +69,18 @@
             <div>
                 <div
                     style="background: #f8f9fa; border-radius: 8px; overflow: hidden; margin-bottom: 1rem; border: 1px solid #eee;">
-                    <img src="{{ url_for('static', filename='images/flexible-ice-film.jpg') }}" alt="Main Product Image"
-                        style="width: 100%;">
+                    <img src="{{ url_for('static', filename='images/' + product.image_base + '.jpg') }}"
+                        alt="Main Product Image" class="clickable-image" style="width: 100%;">
                 </div>
                 <div class="grid grid-4" style="gap: 1rem;">
-                    <img src="https://placehold.co/200x200/e0e0e0/999999?text=View+1"
-                        style="border-radius: 4px; cursor: pointer; opacity: 0.7;">
-                    <img src="https://placehold.co/200x200/e0e0e0/999999?text=View+2"
-                        style="border-radius: 4px; cursor: pointer; opacity: 0.7;">
-                    <img src="https://placehold.co/200x200/e0e0e0/999999?text=View+3"
-                        style="border-radius: 4px; cursor: pointer; opacity: 0.7;">
-                    <img src="https://placehold.co/200x200/e0e0e0/999999?text=Usage"
-                        style="border-radius: 4px; cursor: pointer; opacity: 0.7;">
+                    <img src="{{ url_for('static', filename='images/' + product.image_base + '-view1.jpg') }}"
+                        class="clickable-image" style="border-radius: 4px; cursor: pointer; opacity: 0.7;" alt="View 1">
+                    <img src="{{ url_for('static', filename='images/' + product.image_base + '-view2.jpg') }}"
+                        class="clickable-image" style="border-radius: 4px; cursor: pointer; opacity: 0.7;" alt="View 2">
+                    <img src="{{ url_for('static', filename='images/' + product.image_base + '-view3.jpg') }}"
+                        class="clickable-image" style="border-radius: 4px; cursor: pointer; opacity: 0.7;" alt="View 3">
+                    <img src="{{ url_for('static', filename='images/' + product.image_base + '-usage.jpg') }}"
+                        class="clickable-image" style="border-radius: 4px; cursor: pointer; opacity: 0.7;" alt="Usage">
                 </div>
             </div>
 
@@ -36,9 +89,9 @@
                 <span
                     style="background: var(--color-accent); color: white; padding: 0.25rem 0.75rem; border-radius: 100px; font-size: 0.8rem; font-weight: 600;">Best
                     Seller</span>
-                <h1 style="margin-top: 1rem; font-size: 2.5rem;">Flexible Ice Sheet (cooling type)</h1>
-                <p style="font-size: 1.25rem; color: var(--color-text-secondary); margin-bottom: 2rem;">Durable,
-                    reusable, and efficient cooling for everyday needs.</p>
+                <h1 style="margin-top: 1rem; font-size: 2.5rem;">{{ product.name }}</h1>
+                <p style="font-size: 1.25rem; color: var(--color-text-secondary); margin-bottom: 2rem;">{{
+                    product.description }}</p>
 
                 <div
                     style="border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 1.5rem 0; margin-bottom: 2rem;">
@@ -114,4 +167,51 @@
         </div>
     </div>
 </section>
+
+<!-- Lightbox Modal -->
+<div id="lightboxModal" class="lightbox-modal">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightboxImage" alt="Full size image">
+</div>
+
+<script>
+    // Get modal elements
+    const modal = document.getElementById('lightboxModal');
+    const modalImg = document.getElementById('lightboxImage');
+    const closeBtn = document.querySelector('.lightbox-close');
+    const clickableImages = document.querySelectorAll('.clickable-image');
+
+    // Add click event to all clickable images
+    clickableImages.forEach(img => {
+        img.addEventListener('click', function () {
+            modal.classList.add('active');
+            modalImg.src = this.src;
+        });
+    });
+
+    // Close modal when clicking the X button
+    closeBtn.addEventListener('click', function () {
+        modal.classList.remove('active');
+    });
+
+    // Close modal when clicking on the image itself
+    modalImg.addEventListener('click', function () {
+        modal.classList.remove('active');
+    });
+
+    // Close modal when clicking outside the image
+    modal.addEventListener('click', function (e) {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+        }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+            modal.classList.remove('active');
+        }
+    });
+</script>
+
 {% endblock %}

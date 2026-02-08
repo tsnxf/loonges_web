@@ -89,10 +89,39 @@ def about():
 def products():
     return render_template('products.html')
 
+# Product Data
+PRODUCTS = {
+    1: {
+        'name': 'Flexible Ice Sheet (cooling type)',
+        'description': 'Ideal for lunch boxes and small cooler bags. Durable and reusable.',
+        'image_base': 'flexible-ice-film',
+        'category': 'Ice Packs'
+    },
+    2: {
+        'name': 'Flexible Ice Sheet (freezing type)',
+        'description': 'Ideal for icecream and other frozen foods.',
+        'image_base': 'flexible-ice-sheet-pink',
+        'category': 'Ice Packs'
+    },
+    3: {
+        'name': 'Customized combination of the Ice Sheet',
+        'description': 'fulfill all purpose of the Ice Sheet',
+        'image_base': 'flexible-ice-sheet-combination',
+        'category': 'Ice Packs'
+    },
+    4: {
+        'name': 'Pets Fit Type',
+        'description': 'Designed for long-haul shipping and medical transport. Maintains sub-zero temps.',
+        'image_base': 'pets-fit-type',
+        'category': 'Cold Bricks'
+    },
+}
+
 @app.route('/product/<int:product_id>')
 def product_detail(product_id):
-    # In a real app, fetch from DB. For now, we'll placeholder it.
-    return render_template('product_detail.html', product_id=product_id)
+    # Get product data or default to product 1
+    product = PRODUCTS.get(product_id, PRODUCTS[1])
+    return render_template('product_detail.html', product_id=product_id, product=product)
 
 @app.route('/factory')
 def factory():
